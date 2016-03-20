@@ -8,7 +8,7 @@ import logging
 import yaml
 
 import diagnose
-import jasperpath
+import paths
 
 
 class PhonetisaurusG2P(object):
@@ -65,10 +65,10 @@ class PhonetisaurusG2P(object):
 
     @classmethod
     def get_config(cls):
-        conf = {'fst_model': os.path.join(jasperpath.APP_PATH, os.pardir,
+        conf = {'fst_model': os.path.join(paths.APP_PATH, os.pardir,
                                           'phonetisaurus', 'g014b2b.fst')}
         # Try to get fst_model from config
-        profile_path = jasperpath.config('profile.yml')
+        profile_path = paths.config('profile.yml')
         if os.path.exists(profile_path):
             with open(profile_path, 'r') as f:
                 profile = yaml.safe_load(f)

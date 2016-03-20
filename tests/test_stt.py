@@ -2,7 +2,7 @@
 # -*- coding: utf-8-*-
 import unittest
 import imp
-from src import jasperpath
+from src import paths
 from plugins import stt
 
 
@@ -29,8 +29,8 @@ def pocketsphinx_installed():
 class TestSTT(unittest.TestCase):
 
     def setUp(self):
-        self.jasper_clip = jasperpath.data('audio', 'jasper.wav')
-        self.time_clip = jasperpath.data('audio', 'time.wav')
+        self.jasper_clip = paths.data('audio', 'jasper.wav')
+        self.time_clip = paths.data('audio', 'time.wav')
 
         self.passive_stt_engine = stt.PocketSphinxSTT.get_passive_instance()
         self.active_stt_engine = stt.PocketSphinxSTT.get_active_instance()

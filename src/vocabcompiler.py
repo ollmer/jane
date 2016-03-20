@@ -17,7 +17,7 @@ from abc import ABCMeta, abstractmethod, abstractproperty
 import yaml
 
 import brain
-import jasperpath
+import paths
 
 from g2p import PhonetisaurusG2P
 try:
@@ -419,9 +419,9 @@ class JuliusVocabulary(AbstractVocabulary):
         prefix = 'jasper'
         tmpdir = tempfile.mkdtemp()
 
-        lexicon_file = jasperpath.data('julius-stt', 'VoxForge.tgz')
+        lexicon_file = paths.data('julius-stt', 'VoxForge.tgz')
         lexicon_archive_member = 'VoxForge/VoxForgeDict'
-        profile_path = jasperpath.config('profile.yml')
+        profile_path = paths.config('profile.yml')
         if os.path.exists(profile_path):
             with open(profile_path, 'r') as f:
                 profile = yaml.safe_load(f)
@@ -498,7 +498,7 @@ def get_keyword_phrases():
     """
     phrases = []
 
-    with open(jasperpath.data('keyword_phrases'), mode="r") as f:
+    with open(paths.data('keyword_phrases'), mode="r") as f:
         for line in f:
             phrase = line.strip()
             if phrase:

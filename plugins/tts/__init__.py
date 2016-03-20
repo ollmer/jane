@@ -31,7 +31,7 @@ except ImportError:
     pass
 
 from src import diagnose
-from src import jasperpath
+from src import paths
 
 
 class AbstractTTSEngine(object):
@@ -142,7 +142,7 @@ class EspeakTTS(AbstractTTSEngine):
         config = {}
         # HMM dir
         # Try to get hmm_dir from config
-        profile_path = jasperpath.config('profile.yml')
+        profile_path = paths.config('profile.yml')
         if os.path.exists(profile_path):
             with open(profile_path, 'r') as f:
                 profile = yaml.safe_load(f)
@@ -264,7 +264,7 @@ class FliteTTS(AbstractTTSEngine):
         config = {}
         # HMM dir
         # Try to get hmm_dir from config
-        profile_path = jasperpath.config('profile.yml')
+        profile_path = paths.config('profile.yml')
         if os.path.exists(profile_path):
             with open(profile_path, 'r') as f:
                 profile = yaml.safe_load(f)
@@ -361,7 +361,7 @@ class PicoTTS(AbstractTTSEngine):
         config = {}
         # HMM dir
         # Try to get hmm_dir from config
-        profile_path = jasperpath.config('profile.yml')
+        profile_path = paths.config('profile.yml')
         if os.path.exists(profile_path):
             with open(profile_path, 'r') as f:
                 profile = yaml.safe_load(f)
@@ -433,7 +433,7 @@ class GoogleTTS(AbstractMp3TTSEngine):
         config = {}
         # HMM dir
         # Try to get hmm_dir from config
-        profile_path = jasperpath.config('profile.yml')
+        profile_path = paths.config('profile.yml')
         if os.path.exists(profile_path):
             with open(profile_path, 'r') as f:
                 profile = yaml.safe_load(f)
@@ -510,7 +510,7 @@ class MaryTTS(AbstractTTSEngine):
         config = {}
         # HMM dir
         # Try to get hmm_dir from config
-        profile_path = jasperpath.config('profile.yml')
+        profile_path = paths.config('profile.yml')
         if os.path.exists(profile_path):
             with open(profile_path, 'r') as f:
                 profile = yaml.safe_load(f)
@@ -589,7 +589,7 @@ class IvonaTTS(AbstractMp3TTSEngine):
         config = {}
         # HMM dir
         # Try to get hmm_dir from config
-        profile_path = jasperpath.config('profile.yml')
+        profile_path = paths.config('profile.yml')
         if os.path.exists(profile_path):
             with open(profile_path, 'r') as f:
                 profile = yaml.safe_load(f)

@@ -4,11 +4,11 @@
 import sys
 import argparse
 import logging
-from src import jasperpath, diagnose
+from src import paths, diagnose
 from src.jane import Jane
 
-# Add jasperpath.LIB_PATH to sys.path
-sys.path.append(jasperpath.LIB_PATH)
+# Add paths.LIB_PATH to sys.path
+sys.path.append(paths.LIB_PATH)
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description='Jana Intelligent Voice Assistant')
@@ -21,13 +21,12 @@ if __name__ == "__main__":
     parser.add_argument('-d', '--debug', action='store_true', help='Show debug messages')
     args = parser.parse_args()
 
-
     logging.basicConfig()
     logger = logging.getLogger()
     logger.getChild("client.stt").setLevel(logging.INFO)
 
     options = {
-        'config': jasperpath.config('profile.yml')
+        'config': paths.config('profile.yml')
     }
     if args.text:
         options['text'] = True
