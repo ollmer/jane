@@ -29,4 +29,4 @@ class TextInput:
         return input
 
     def say(self, phrase, OPTIONS=None):
-        print("JASPER: %s" % phrase)
+        print("Jane: %s" % phrase)

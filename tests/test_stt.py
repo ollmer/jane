@@ -3,7 +3,7 @@
 import unittest
 import imp
 from src import jasperpath
-from modules import stt
+from plugins import stt
 
 
 def cmuclmtk_installed():

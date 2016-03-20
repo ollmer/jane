@@ -1,7 +1,7 @@
 #!/usr/bin/env python2
 # -*- coding: utf-8-*-
 import unittest
-from modules import tts
+from plugins import tts
 
 
 class TestTTS(unittest.TestCase):

@@ -2,7 +2,7 @@
 # -*- coding: utf-8-*-
 import unittest
 from src import test_mic, diagnose, jasperpath
-from modules import Life, Joke, Time, Gmail, HN, News, Weather
+from plugins.conversation import Life, Joke, Time, Gmail, HN, News, Weather
 
 DEFAULT_PROFILE = {
     'prefers_email': False,

@@ -2,7 +2,7 @@ import logging
 
 import yaml
 
-from modules import tts, stt
+from plugins import tts, stt
 from conversation import Conversation
 from mic import Mic
 from text_input import TextInput
