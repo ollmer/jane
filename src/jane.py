@@ -22,6 +22,8 @@ class Jane(object):
             self._logger.error("Can't open config file: '%s'", config_file)
             raise
 
+        self._logger.info('config loaded')
+        self._logger.info(self.config)
         try:
             stt_engine_slug = self.config['stt_engine']
         except KeyError:
@@ -43,10 +45,11 @@ class Jane(object):
             self._logger.warning("tts_engine not specified in profile, defaulting " +
                                  "to '%s'", tts_engine_slug)
         tts_engine_class = tts.get_engine_by_slug(tts_engine_slug)
+        self._logger.info('LOADED TTS %s', tts_engine_class)
 
         # Initialize Mic
         if 'text' in options:
-            self.input = TextInput()
+            self.input = TextInput(tts_engine_class.get_instance())
         else:
             self.input = Mic(tts_engine_class.get_instance(),
                              stt_passive_engine_class.get_passive_instance(),
@@ -59,6 +62,7 @@ class Jane(object):
                           % self.config["first_name"])
         else:
             salutation = "How can I be of service?"
+        print('Say hello')
         self.input.say(salutation)
 
         conversation = Conversation("JANE", self.input, self.config)

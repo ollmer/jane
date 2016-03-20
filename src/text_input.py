@@ -9,7 +9,8 @@ implementation, Jasper is always active listening with local_mic.
 class TextInput:
     prev = None
 
-    def __init__(self):
+    def __init__(self, speaker):
+        self.speaker = speaker
         return
 
     def passiveListen(self, PERSONA):
@@ -24,9 +25,10 @@ class TextInput:
         if not LISTEN:
             return self.prev
 
-        input = raw_input("YOU: ")
+        input = raw_input("> ")
         self.prev = input
         return input
 
     def say(self, phrase, OPTIONS=None):
         print("Jane: %s" % phrase)
+        self.speaker.say(phrase)
