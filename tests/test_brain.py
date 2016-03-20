@@ -2,7 +2,7 @@
 # -*- coding: utf-8-*-
 import unittest
 import mock
-from client import brain, test_mic
+from src import brain, test_mic
 
 
 DEFAULT_PROFILE = {

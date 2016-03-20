@@ -2,7 +2,8 @@
 # -*- coding: utf-8-*-
 import unittest
 import imp
-from client import stt, jasperpath
+from src import jasperpath
+from modules import stt
 
 
 def cmuclmtk_installed():
