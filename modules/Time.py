@@ -1,7 +1,7 @@
 # -*- coding: utf-8-*-
 import datetime
 import re
-from client.app_utils import getTimezone
+from src.app_utils import getTimezone
 from semantic.dates import DateService
 
 WORDS = ["TIME"]

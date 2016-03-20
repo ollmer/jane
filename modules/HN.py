@@ -3,7 +3,7 @@ import urllib2
 import re
 import random
 from bs4 import BeautifulSoup
-from client import app_utils
+from src import app_utils
 from semantic.numbers import NumberService
 
 WORDS = ["HACKER", "NEWS", "YES", "NO", "FIRST", "SECOND", "THIRD"]

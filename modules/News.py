@@ -1,6 +1,6 @@
 # -*- coding: utf-8-*-
 import feedparser
-from client import app_utils
+from src import app_utils
 import re
 from semantic.numbers import NumberService
 

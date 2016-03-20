@@ -65,9 +65,6 @@ class PhonetisaurusG2P(object):
 
     @classmethod
     def get_config(cls):
-        # FIXME: Replace this as soon as pull request
-        # jasperproject/jasper-client#128 has been merged
-
         conf = {'fst_model': os.path.join(jasperpath.APP_PATH, os.pardir,
                                           'phonetisaurus', 'g014b2b.fst')}
         # Try to get fst_model from config

@@ -3,7 +3,7 @@ import re
 import logging
 import difflib
 import mpd
-from client.mic import Mic
+from src.mic import Mic
 
 # Standard module stuff
 WORDS = ["MUSIC", "SPOTIFY"]
