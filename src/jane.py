@@ -1,13 +1,12 @@
-import os
-import shutil
 import logging
 
 import yaml
 
-import tts, stt
+from modules import tts, stt
 from conversation import Conversation
 from mic import Mic
 from text_input import TextInput
+
 
 class Jane(object):
     def __init__(self, options={}):
@@ -27,8 +26,8 @@ class Jane(object):
             stt_engine_slug = self.config['stt_engine']
         except KeyError:
             stt_engine_slug = 'sphinx'
-            logger.warning("stt_engine not specified in profile, defaulting " +
-                           "to '%s'", stt_engine_slug)
+            self._logger.warning("stt_engine not specified in profile, defaulting " +
+                                 "to '%s'", stt_engine_slug)
         stt_engine_class = stt.get_engine_by_slug(stt_engine_slug)
 
         try:
@@ -41,8 +40,8 @@ class Jane(object):
             tts_engine_slug = self.config['tts_engine']
         except KeyError:
             tts_engine_slug = tts.get_default_engine_slug()
-            logger.warning("tts_engine not specified in profile, defaulting " +
-                           "to '%s'", tts_engine_slug)
+            self._logger.warning("tts_engine not specified in profile, defaulting " +
+                                 "to '%s'", tts_engine_slug)
         tts_engine_class = tts.get_engine_by_slug(tts_engine_slug)
 
         # Initialize Mic
@@ -64,4 +63,3 @@ class Jane(object):
 
         conversation = Conversation("JANE", self.input, self.config)
         conversation.handleForever()
-

@@ -1,12 +1,4 @@
 # -*- coding: utf-8-*-
-"""
-A Speaker handles audio output from Jasper to the user
-
-Speaker methods:
-    say - output 'phrase' as speech
-    play - play the audio in 'filename'
-    is_available - returns True if the platform supports this implementation
-"""
 import os
 import platform
 import re
@@ -38,8 +30,8 @@ try:
 except ImportError:
     pass
 
-import diagnose
-import jasperpath
+from src import diagnose
+from src import jasperpath
 
 
 class AbstractTTSEngine(object):
