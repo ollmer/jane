@@ -1,3 +1,7 @@
+Jane is an alternative fork of Jasper voice computing platform.
+
+    Oleg Shlyazko <oleg@olmer.me>
+
 Jasper was originally created by Shubhro Saha and Charles Marsh in early 2014.
 In August 2014, the core development team has been joined by Jan Holthuis.
 
